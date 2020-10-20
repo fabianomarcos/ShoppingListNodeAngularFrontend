@@ -6,9 +6,12 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
+import { environment } from 'src/environments/environment';
+
 export abstract class BaseResourceService<T extends BaseResourceModel> {
 
   protected http: HttpClient;
+  protected baseUrl = environment.baseUrl;
 
   constructor(
     protected apiPath: string,
@@ -19,14 +22,14 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   }
 
   getAll(): Observable<T[]> {
-    return this.http.get(this.apiPath).pipe(
+    return this.http.get(`${this.baseUrl}${this.apiPath}`).pipe(
       map(this.jsonDataToResources.bind(this)),
       catchError(this.handleError)
     )
   }
 
   getById(id: number): Observable<T> {
-    const url = `${this.apiPath}/${id}`;
+    const url = `${this.baseUrl}${this.apiPath}/${id}`;
 
     return this.http.get(url).pipe(
       map(this.jsonDataToResource.bind(this)),
@@ -35,14 +38,14 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   }
 
   create(resource: T): Observable<T> {
-    return this.http.post(this.apiPath, resource).pipe(
+    return this.http.post(`${this.baseUrl}${this.apiPath}`, resource).pipe(
       map(this.jsonDataToResource.bind(this)),
       catchError(this.handleError)
     )
   }
 
   update(resource: T): Observable<T> {
-    const url = `${this.apiPath}/${resource.id}`;
+    const url = `${this.baseUrl}${this.apiPath}/${resource.id}`;
 
     return this.http.put(url, resource).pipe(
       map(() => resource),
@@ -51,7 +54,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
   }
 
   delete(id: string): Observable<any> {
-    const url = `${this.apiPath}/${id}`;
+    const url = `${this.baseUrl}${this.apiPath}/${id}`;
 
     return this.http.delete(url).pipe(
       map(() => null),

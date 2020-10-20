@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 
 import { HeaderComponent } from './components/header/header.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
+import { CardInformationComponent } from './components/card-information/card-information.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
   ],
   declarations: [
     BreadCrumbComponent,
+    CardInformationComponent,
     HeaderComponent,
   ],
   exports: [
@@ -22,6 +24,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
     RouterModule,
 
     BreadCrumbComponent,
+    CardInformationComponent,
     HeaderComponent,
   ]
 })
