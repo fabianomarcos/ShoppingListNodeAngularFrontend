@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { HeaderComponent } from './components/header/header.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
     RouterModule
   ],
   declarations: [
+    BreadCrumbComponent,
     HeaderComponent,
   ],
   exports: [
@@ -19,6 +21,7 @@ import { HeaderComponent } from './components/header/header.component';
     ReactiveFormsModule,
     RouterModule,
 
+    BreadCrumbComponent,
     HeaderComponent,
   ]
 })
