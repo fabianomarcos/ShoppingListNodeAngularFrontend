@@ -1,0 +1,22 @@
+.container {
+  color: #116fbf;
+  margin-top: 20px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  border-radius: .25rem;
+  background-color: #e9ecef;
+
+  li + li {
+    margin-left: 5px;
+  }
+
+  a {
+    color: #116fbf;
+  }
+}

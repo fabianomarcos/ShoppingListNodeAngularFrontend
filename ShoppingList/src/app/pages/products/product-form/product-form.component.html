@@ -1,0 +1,79 @@
+<div class="container">
+  <app-card-information
+    income={{income}}
+    outcome={{outcome}}
+    balance={{balance}}
+  ></app-card-information>
+
+  <app-bread-crumb
+    [items]="[{text: 'Produtos', link: '/products'}, {text: pageTitle}]"
+  ></app-bread-crumb>
+
+  <app-page-header
+    [page-title]="pageTitle"
+    button-text="<< Voltar"
+    button-link="/products"
+    button-class="button-info"
+  ></app-page-header>
+
+
+  <form [formGroup]="resourceForm" (submit)="submitForm()">
+
+    <div class="card">
+      <div class="card-header">
+        Informações sobre o Produto
+      </div>
+
+      <div class="card-body">
+        <div class="form-row">
+          <!-- name -->
+          <div class="form-group col-md-5">
+            <label for="name">Nome: </label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+
+            <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error>
+          </div>
+
+          <!-- amount -->
+          <div class="form-group col-md-3">
+            <label for="amount">Valor</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">R$</div>
+              </div>
+              <input [imask]="imaskConfig" type="text" class="form-control text-right" id="amount" formControlName="amount">
+            </div>
+
+            <app-form-field-error [form-control]="resourceForm.get('amount')"></app-form-field-error>
+          </div>
+
+           <!-- quantity -->
+          <div class="form-group col-md-3">
+            <label for="quantity">Quantidade</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">R$</div>
+              </div>
+              <input [imask]="imaskConfig" type="text" class="form-control text-right" id="quantity" formControlName="quantity">
+            </div>
+
+            <app-form-field-error [form-control]="resourceForm.get('quantity')"></app-form-field-error>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
+
+    <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn button-info">
+      Salvar
+    </button>
+
+    <button class="btn button-danger">
+      Voltar
+    </button>
+
+  </form>
+</div>
