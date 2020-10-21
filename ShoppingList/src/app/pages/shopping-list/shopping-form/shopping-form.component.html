@@ -1,0 +1,13 @@
+<div class="container">
+  <app-card-information></app-card-information>
+
+  <app-bread-crumb
+    [items]="[{text: '/  Lista de Compra', link: '/shopping-list'}, {text: pageTitle}]"
+  ></app-bread-crumb>
+
+  <div *ngFor="let product of products">
+    <span>{{product}}</span>
+    <span>product.name</span>
+  </div>
+</div>
+

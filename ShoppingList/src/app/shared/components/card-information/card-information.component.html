@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content income">
+      <div class="header">
+        <span>Valor para Compras</span>
+      </div>
+        <h1><strong>{{income | currency:'BRL'}}</strong></h1>
+    </div>
+    <div class="content outcome">
+      <div class="header">
+        <span>Total da lista</span>
+      </div>
+      <h1>{{outcome | currency:'BRL'}}</h1>
+    </div>
+    <div class="content balance">
+      <div class="header">
+        <span>Valor Disponível</span>
+      </div>
+      <h1>{{balance | currency:'BRL'}}</h1>
+    </div>
+</div>

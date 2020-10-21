@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 19px;
+}
+
+.btn {
+  width: 140px;
+}
+
+.btn {
+  color: #17a2b8;
+  background-color: #0000;
+  background-image: none;
+  border-color: #17a2b8;
+
+  &:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  background-image: none;
+  border-color: #17a2b8;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="content">
+    <h1 class="title">
+      {{pageTitle}}
+    </h1>
+  </div>
+  <div *ngIf="showButton" class="col-md-3 text-right">
+    <a [routerLink]="buttonLink" [ngClass]="buttonClass">
+      <button class="btn">
+        {{buttonText}}
+      </button>
+    </a>
+  </div>
+</div>
