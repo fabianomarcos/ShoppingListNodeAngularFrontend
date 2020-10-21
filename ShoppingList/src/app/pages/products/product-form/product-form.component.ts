@@ -11,14 +11,9 @@ import { ProductService } from '../shared/product.service';
   styleUrls: ['./product-form.component.scss']
 })
 export class ProductsFormComponent extends BaseResourceFormComponent<Product> implements OnInit{
-  imaskConfig = {
-    mask: Number,
-    scale: 2,
-    thousandsSeparator: '',
-    padFractionalZeros: true,
-    normalizeZeros: true,
-    radix: ','
-  };
+  public income: number = 7300;
+  public outcome: number = 0;
+  public balance: number = 0;
 
   constructor(
     protected productService: ProductService,

@@ -9,12 +9,12 @@
     [items]="[{text: 'Produtos', link: '/products'}, {text: pageTitle}]"
   ></app-bread-crumb>
 
-  <app-page-header
+  <app-header
     [page-title]="pageTitle"
     button-text="<< Voltar"
     button-link="/products"
-    button-class="button-info"
-  ></app-page-header>
+    button-class="btn-info"
+  ></app-header>
 
 
   <form [formGroup]="resourceForm" (submit)="submitForm()">
@@ -27,7 +27,7 @@
       <div class="card-body">
         <div class="form-row">
           <!-- name -->
-          <div class="form-group col-md-5">
+          <div class="form-group">
             <label for="name">Nome: </label>
             <input type="text" class="form-control" id="name" formControlName="name">
 
@@ -35,27 +35,16 @@
           </div>
 
           <!-- amount -->
-          <div class="form-group col-md-3">
+          <div class="form-group">
             <label for="amount">Valor</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">R$</div>
-              </div>
-              <input [imask]="imaskConfig" type="text" class="form-control text-right" id="amount" formControlName="amount">
-            </div>
-
+            R$ <input type="text" class="form-control text-right" id="amount" formControlName="amount">
             <app-form-field-error [form-control]="resourceForm.get('amount')"></app-form-field-error>
           </div>
 
            <!-- quantity -->
-          <div class="form-group col-md-3">
+          <div class="form-group">
             <label for="quantity">Quantidade</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">R$</div>
-              </div>
-              <input [imask]="imaskConfig" type="text" class="form-control text-right" id="quantity" formControlName="quantity">
-            </div>
+            R$ <input type="text" class="form-control text-right" id="quantity" formControlName="quantity">
 
             <app-form-field-error [form-control]="resourceForm.get('quantity')"></app-form-field-error>
           </div>
