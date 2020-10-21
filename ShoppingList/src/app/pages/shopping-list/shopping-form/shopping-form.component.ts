@@ -12,7 +12,10 @@ import { ShoppingListService } from '../shared/shopping-list.service';
   templateUrl: './shopping-form.component.html',
   styleUrls: ['./shopping-form.component.scss']
 })
-export class ShoppingFormComponent extends BaseResourceFormComponent<ShoppingList> implements OnInit{
+export class ShoppingFormComponent /* extends BaseResourceFormComponent<ShoppingList> */ implements OnInit{
+  protected buildResourceForm(): void {
+    throw new Error('Method not implemented.');
+  }
 
   products = [];
 
@@ -30,12 +33,12 @@ export class ShoppingFormComponent extends BaseResourceFormComponent<ShoppingLis
     protected productService: ProductService,
     protected injector: Injector
   ) {
-    super(injector, new ShoppingList(), shoppingListService, ShoppingList.fromJson)
+   // super(injector, new ShoppingList(), shoppingListService, ShoppingList.fromJson)
   }
 
   ngOnInit() {
     this.loadProducts();
-    super.ngOnInit();
+    // super.ngOnInit();
   }
 
  /*  get typeOptions(): Array<any>{
@@ -50,7 +53,7 @@ export class ShoppingFormComponent extends BaseResourceFormComponent<ShoppingLis
   } */
 
 
-  protected buildResourceForm() {
+  /* protected buildResourceForm() {
     this.resourceForm = this.formBuilder.group({
       id: [null],
    //   name: [null, [Validators.required, Validators.minLength(2)]],
@@ -58,16 +61,18 @@ export class ShoppingFormComponent extends BaseResourceFormComponent<ShoppingLis
     //  price: [null, [Validators.required]],
       product_id: [null, [Validators.required]]
     });
-  }
+  } */
 
   private loadProducts() {
     this.productService.getAll().subscribe(
       products => {
-        this.products = products.map(product => {
+        const teste = products.map(product => {
           const { id, name } = product;
          // console.log({id, name});
           return {id , name };
         })
+        this.products = teste[0];
+        this.products = [{id: 1, name: "teste"}, {id: 2, name: "teste 2"}]
         console.log(products, {...this.products})
       }
     );
@@ -77,8 +82,8 @@ export class ShoppingFormComponent extends BaseResourceFormComponent<ShoppingLis
     return "Cadastro de Novo Produto";
   }
 
-  protected editionPageTitle(): string {
+  /* protected editionPageTitle(): string {
     const resourceName = this.resource.name || "";
     return "Editando Produto: " + resourceName;
-  }
+  } */
 }

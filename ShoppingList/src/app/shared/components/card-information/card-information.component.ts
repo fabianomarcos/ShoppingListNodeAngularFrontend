@@ -14,6 +14,9 @@ interface InformationItem {
 export class CardInformationComponent implements OnInit {
 
   @Input() item: Array<InformationItem> = [];
+  @Input() income: number = 0;
+  @Input() outcome: number = 0;
+  @Input() balance: number = 0;
 
   constructor() { }
 

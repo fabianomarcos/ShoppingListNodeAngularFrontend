@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <app-card-information></app-card-information>
 
   <app-bread-crumb
@@ -12,49 +12,9 @@
     button-class="btn-light"
   ></app-page-header>
 
-  <form [formGroup]="resourceForm" (submit)="submitForm()">
-
-    <div class="card">
-      <div class="card-header">
-        Informações sobre a Lista
-      </div>
-
-      <div class="card-body">
-        <div class="form-row">
-
-          <!-- description -->
-          <div class="form-group col-md-5">
-            <label for="description">Descrição</label>
-            <input type="text" class="form-control" id="description" formControlName="description">
-
-            <!-- <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error> -->
-          </div>
-        </div>
-
-
-        <div class="form-row">
-          <div class="form-group col-md-3">
-            <label for="categoryId">Produtos</label>
-
-            <select name="products_id" id="products_id" formControlName="products_id" class="form-control">
-              <option *ngFor="let product of products" [value]="product.id">{{ product.name }}</option>
-            </select>
-
-            <!-- <app-form-field-error [form-control]="resourceForm.get('categoryId')"></app-form-field-error> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages> -->
-
-    <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
-      Salvar
-    </button>
-
-    <button [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">
-      Cancelar
-    </button>
-
-  </form>
+  <div *ngFor="let product of products">
+    <span>{{product}}</span>
+    <span>product.name</span>
+  </div>
 </div>
+ -->

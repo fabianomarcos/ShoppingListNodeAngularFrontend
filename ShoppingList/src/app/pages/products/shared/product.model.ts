@@ -6,7 +6,7 @@ export class Product extends BaseResourceModel {
     public name?: string,
     public quantity?: number,
     public price?: number,
-    public amount?: string,
+    public amount?: number,
     public dateRegister?: string,
   ){
     super();

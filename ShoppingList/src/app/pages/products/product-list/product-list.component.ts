@@ -10,6 +10,9 @@ import { ProductService } from '../shared/product.service';
 })
 export class ProductListComponent extends BaseResourceListComponent<Product> implements OnInit {
   private products: Product[] = [];
+  public income: number = 7300;
+  public outcome: number = 0;
+  public balance: number = 0;
 
   constructor(private productService: ProductService) {
     super(productService);
@@ -28,6 +31,8 @@ export class ProductListComponent extends BaseResourceListComponent<Product> imp
       products => {
         this.products = products.map(product => {
           product.amount = product.quantity * product.price;
+          this.outcome += product.amount;
+          this.balance = this.income - this.outcome;
           return product;
         })
       }

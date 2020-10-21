@@ -1,23 +1,20 @@
 <div class="container">
-    <div class="content">
+    <div class="content income">
       <div class="header">
-        <span>Entradas</span>
-        <i></i>
+        <span>Valor para Compras</span>
       </div>
-        <h1><strong>R$ 4200,00</strong></h1>
+        <h1><strong>{{income | currency:'BRL'}}</strong></h1>
     </div>
-    <div class="content">
+    <div class="content outcome">
       <div class="header">
-        <span>Entradas</span>
-        <i></i>
+        <span>Total da lista</span>
       </div>
-      <h1>R$ 4200,00</h1>
+      <h1>{{outcome | currency:'BRL'}}</h1>
     </div>
-    <div class="content">
+    <div class="content balance">
       <div class="header">
-        <span>Entradas</span>
-        <i></i>
+        <span>Valor Disponível</span>
       </div>
-      <h1>R$ 4200,00</h1>
+      <h1>{{balance | currency:'BRL'}}</h1>
     </div>
 </div>
