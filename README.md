@@ -1,5 +1,5 @@
-# TemplateNodeJS
-Este Template foi criado como base para criação de novos projetos em nodeJS. Configurações básicas do Lint, Prettier e EditorConfig.
-Algumas classes padrões de arquitetura foram aplicadas.
-Para utilização deste template é necessario clicar em Use this template e então será redirecionado para o seu github, onde poderá criar
-uma branch com as mesmas aplicações/funcionalidades deste template.
+# Angular
+Este projetos ainda não foi possível implementar os testes.
+
+Para rodar o projeto é necessário rodar a api do ShoppingListNodeAngular, também neste repositório. Comando ng serve.
+A lista propriamente dita não está funcionando. Problemas na listagem da mesma. Página de produtos para cadastrar simula um pouco as funcionalidades de lista. Porém encontra-se com algns erros ainda, a tratar .
