@@ -8,6 +8,7 @@ import { map, catchError } from "rxjs/operators";
 
 import { environment } from 'src/environments/environment';
 
+
 export abstract class BaseResourceService<T extends BaseResourceModel> {
 
   protected http: HttpClient;
@@ -21,7 +22,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     this.http = injector.get(HttpClient);
   }
 
-  getAll(): Observable<T[]> {
+  getAll() {
     return this.http.get(`${this.baseUrl}${this.apiPath}`).pipe(
       map(this.jsonDataToResources.bind(this)),
       catchError(this.handleError)

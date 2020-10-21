@@ -14,6 +14,6 @@ export class ShoppingList extends BaseResourceModel{
   }
 
   static fromJson(jsonData: any): ShoppingList {
-    return Object.assign(new ShoppingList(), jsonData);
+    return /* Object.assign(new ShoppingList(), */ jsonData; //);
   }
 }

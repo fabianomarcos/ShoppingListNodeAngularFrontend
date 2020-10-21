@@ -25,73 +25,31 @@
     </thead>
     <tbody>
       <!-- <tr *ngFor="let product of resources"> -->
-      <tr>
+      <tr *ngFor="let product of setProducts()">
         <td>
-          <strong>product.name</strong><br>
-          <small class="text-success">product.dateRegister</small><br>
+          <strong>{{product.name}}</strong><br>
+          <small class="text-success">{{product.dateRegister}}</small><br>
         </td>
         <td>
-          product.quantity
+          {{product.quantity}}
         </td>
         <td class="text-right">
           <strong>
-            product.price
+            {{product.price | currency:'BRL'}}
           </strong>
         </td>
         <td class="text-right">
           <strong>
-            product.amount
+            {{product.amount | currency:'BRL'}}
           </strong>
         </td>
-        <td class="text-center">
-          <!-- <a [routerLink]="[product.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a> -->
-          <!-- <button (click)="deleteResource(product)" class="btn btn-outline-danger btn-sm">Excluir</button> -->
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>product.name</strong><br>
-          <small class="text-success">product.dateRegister</small><br>
-        </td>
-        <td>
-          product.quantity
-        </td>
-        <td class="text-right">
-          <strong>
-            product.price
-          </strong>
-        </td>
-        <td class="text-right">
-          <strong>
-            product.amount
-          </strong>
-        </td>
-        <td class="text-center">
-          <!-- <a [routerLink]="[product.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a> -->
-          <!-- <button (click)="deleteResource(product)" class="btn btn-outline-danger btn-sm">Excluir</button> -->
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <strong>product.name</strong><br>
-          <small class="text-success">product.dateRegister</small><br>
-        </td>
-        <td>
-          product.quantity
-        </td>
-        <td class="text-right">
-          <strong>
-            product.price
-          </strong>
-        </td>
-        <td class="text-right">
-          <strong>
-            product.amount
-          </strong>
-        </td>
-        <td class="text-center">
-          <!-- <a [routerLink]="[product.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a> -->
-          <!-- <button (click)="deleteResource(product)" class="btn btn-outline-danger btn-sm">Excluir</button> -->
+        <td class="button-group">
+          <a [routerLink]="[product.id, 'edit']">
+            <button  class="btn button-info">
+              Editar
+            </button>
+          </a>
+          <button (click)="deleteResource(product)" class="btn button-danger">Excluir</button>
         </td>
       </tr>
     </tbody>
